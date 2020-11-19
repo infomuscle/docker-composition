@@ -1,0 +1,42 @@
+version: "2"
+
+networks:
+  default:
+    external:
+      name: local-network
+
+services:
+  mysql:
+    image: infomuscle10/mysql
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - TZ=Asia/Seoul
+    command:
+      - --character-set-server=utf8mb4
+    volumes:
+      - ./mysql:/var/lib/mysql
+  oracle:
+    image: infomuscle10/oracle
+    container_name: oracle
+    ports:
+      - "1521:1521"
+    environment:
+      - ORACLE_PWD=password
+    volumes:
+      - ./oracle:/ORCL
+  postgres:
+    image: infomuscle10/postgres
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - PGDATA=/data/pgdata
+      - POSTGRES_PASSWORD=password
+    volumes:
+      #      - /var/lib/docker/volumes/postgres/_data:/var/lib/postgresql/data
+      - ./postgres/data:/var/lib/postgresql/data
+
+
