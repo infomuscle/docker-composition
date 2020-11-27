@@ -1,0 +1,14 @@
+version: '2'
+
+networks:
+  default:
+    external:
+      name: local-network
+
+services: 
+  crawler:
+    image: infomuscle10/stock-crawler
+    container_name: crawler
+    ports:
+      - "8001:8001"
+    command: python3 manage.py runserver 0:8001 --settings=crawler.settings_dev
