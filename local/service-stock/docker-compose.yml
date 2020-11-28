@@ -11,7 +11,7 @@ services:
     container_name: front
     ports:
       - "8000:8000"
-    command: python3 manage.py runserver 0:8001 --settings=config.settings.settings_dev
+    command: python3 manage.py runserver 0:8000 --settings=config.settings.settings_dev
   crawler:
     image: infomuscle10/stock-crawler
     container_name: crawler
