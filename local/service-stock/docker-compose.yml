@@ -11,4 +11,4 @@ services:
     container_name: crawler
     ports:
       - "8001:8001"
-    command: python3 manage.py runserver 0:8001 --settings=crawler.settings_dev
+    command: python3 manage.py runserver 0:8001 --settings=config.settings.settings_dev
