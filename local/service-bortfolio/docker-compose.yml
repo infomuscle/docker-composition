@@ -10,7 +10,7 @@ services:
     image: infomuscle10/bortfolio
     container_name: bortfolio
     ports:
-      - "80:80"
+      - "80:8080"
     environment:
       - "SPRING_PROFILES_ACTIVE=dev"
     volumes:
