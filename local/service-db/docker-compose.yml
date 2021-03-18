@@ -43,6 +43,7 @@ services:
     ports:
       - "1521:1521"
     environment:
+      - ORACLE_ALLOW_REMOTE=true
       - TZ=Asia/Seoul
     volumes:
-      - ./oracle-xe-11g-r2:/opt/oracle/oradata
+      - ./oracle-xe-11g-r2:/ORCL
