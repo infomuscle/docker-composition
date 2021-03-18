@@ -4,7 +4,7 @@
 
 ### Custom ###
 /local/service-db/mysql
-/local/service-db/oracle
+/local/service-db/oracle-ee-12c-slim
 /local/service-db/postgres
 /prod/service-db/mysql
 /prod/service-db/oracle

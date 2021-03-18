@@ -28,12 +28,21 @@ services:
       - POSTGRES_PASSWORD=password
     volumes:
       - ./postgres/data:/var/lib/postgresql/data
-  oracle-ee-12c-slim:
-    image: infomuscle10/oracle-ee-12c-slim
-    container_name: oracle-ee-12c-slim
+#  oracle-ee-12c-slim:
+#    image: infomuscle10/oracle-ee-12c-slim
+#    container_name: oracle-ee-12c-slim
+#    ports:
+#      - "1521:1521"
+#    environment:
+#      - TZ=Asia/Seoul
+#    volumes:
+#      - ./oracle-ee-12c-slim:/opt/oracle/oradata
+  oracle-xe-11g-r2:
+    image: infomuscle10/oracle-xe-11g-r2
+    container_name: oracle-xe-11g-r2
     ports:
       - "1521:1521"
     environment:
       - TZ=Asia/Seoul
     volumes:
-      - ./oracle:/opt/oracle/oradata
+      - ./oracle-xe-11g-r2:/opt/oracle/oradata
